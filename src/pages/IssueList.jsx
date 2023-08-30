@@ -1,6 +1,8 @@
+import { Fragment } from "react";
 import { getIssues } from "../apis/api";
 import IssueItem from "../components/IssueItem";
 import Loading from "../components/common/Loading";
+import Advertise from "../components/Advertise";
 import { useFetch } from "../hook/useFetch";
 import { Container, Content } from "../styles/style";
 
@@ -15,8 +17,11 @@ const IssueList = () => {
     <Container>
       <Content>
         <ul>
-          {issues.map((issue, index) => (
-            <IssueItem key={issue.number} issue={issue} />
+          {issues.map((data, index) => (
+            <Fragment key={data.number}>
+              {(index + 1) % 5 === 0 && index >= 4 && <Advertise />}
+              <IssueItem issue={data} />
+            </Fragment>
           ))}
         </ul>
       </Content>
