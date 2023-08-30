@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { owner, repo } from "../../apis/api";
 
 const Header = () => {
   return (
     <Head>
-      <span> facebook / react</span>
+      <span>
+        {owner} / {repo}
+      </span>
     </Head>
   );
 };

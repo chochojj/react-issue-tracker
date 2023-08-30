@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getIssues } from "../apis/api";
-import Issue from "../components/Issue";
+import IssueItem from "../components/IssueItem";
+import { Container, Content } from "../styles/style";
 
 const IssueList = () => {
   const [issues, setIssues] = useState([]);
@@ -13,13 +14,15 @@ const IssueList = () => {
   }, []);
 
   return (
-    <main>
-      <ul>
-        {issues.map((issue, index) => (
-          <Issue key={issue.number} issue={issue} />
-        ))}
-      </ul>
-    </main>
+    <Container>
+      <Content>
+        <ul>
+          {issues.map((issue, index) => (
+            <IssueItem key={issue.number} issue={issue} />
+          ))}
+        </ul>
+      </Content>
+    </Container>
   );
 };
 

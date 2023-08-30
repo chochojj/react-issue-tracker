@@ -1,29 +1,29 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Issue = ({ issue }) => {
+const IssueHeader = ({ issue }) => {
+  const formattedDate = issue.created_at.split("T")[0];
+
   return (
-    <li>
-      <IssueLink>
-        <div>
-          <Title>
-            <span>#{issue.number}</span>
-            <span>{issue.title}</span>
-          </Title>
-          <Info>
-            <span>작성자: {issue.user.login}</span>
-            <span>작성일: {issue.title}</span>
-          </Info>
-        </div>
-        <span>코멘트: {issue.comments}</span>
-      </IssueLink>
-    </li>
+    <Header>
+      <div>
+        <Title>
+          <span>#{issue.number}</span>
+          <span>{issue.title}</span>
+        </Title>
+        <Info>
+          <span>작성자: {issue.user.login}</span>
+          <span>작성일: {formattedDate}</span>
+        </Info>
+      </div>
+      <span>코멘트: {issue.comments}</span>
+    </Header>
   );
 };
 
-export default Issue;
+export default IssueHeader;
 
-const IssueLink = styled(Link)`
+const Header = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -37,6 +37,7 @@ const IssueLink = styled(Link)`
     flex-direction: column;
   }
   & > span {
+    margin-left: 15px;
     font-size: 14px;
   }
 `;

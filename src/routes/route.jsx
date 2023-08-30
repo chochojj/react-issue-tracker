@@ -1,6 +1,7 @@
-import { createBrowserRouter, Link } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import IssueList from "../pages/IssueList";
 import IssueDetail from "../pages/IssueDetail";
+import Notfound from "../components/common/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: "/issues/:id",
     element: <IssueDetail />,
+  },
+  {
+    path: "/*",
+    element: <Notfound />,
   },
 ]);
 
