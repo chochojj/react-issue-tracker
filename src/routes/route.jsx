@@ -1,11 +1,11 @@
 import { createBrowserRouter, Link } from "react-router-dom";
-import Issue from "../pages/Issue";
+import IssueList from "../pages/IssueList";
 import IssueDetail from "../pages/IssueDetail";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Issue />,
+    element: <IssueList />,
   },
   {
     path: "/issues/:id",
