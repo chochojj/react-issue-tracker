@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const IssueHeader = ({ issue }) => {
   const formattedDate = issue.created_at.split("T")[0];
