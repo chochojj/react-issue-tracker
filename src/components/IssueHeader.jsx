@@ -24,12 +24,14 @@ export default IssueHeader;
 
 const Header = styled.div`
   width: 100%;
+  height: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid grey;
   padding: 10px 15px;
+  margin-left: 15px;
 
   & > div {
     display: flex;

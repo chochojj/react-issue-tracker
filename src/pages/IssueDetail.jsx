@@ -32,6 +32,8 @@ const IssueDetail = () => {
 export default IssueDetail;
 
 const Title = styled.div`
+  margin-top: 20px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
