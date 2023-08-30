@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react";
 import { getIssues } from "../apis/api";
 import IssueItem from "../components/IssueItem";
+import Loading from "../components/common/Loading";
+import { useFetch } from "../hook/useFetch";
 import { Container, Content } from "../styles/style";
 
 const IssueList = () => {
-  const [issues, setIssues] = useState([]);
+  const { data: issues, isLoading } = useFetch(getIssues);
 
-  useEffect(() => {
-    getIssues().then((data) => {
-      setIssues(data);
-      console.log(data);
-    });
-  }, []);
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <Container>

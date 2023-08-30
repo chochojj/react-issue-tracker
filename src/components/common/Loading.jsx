@@ -27,7 +27,6 @@ const Wrap = styled(Content)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 `;
 const Loader = styled.span`
   width: 48px;

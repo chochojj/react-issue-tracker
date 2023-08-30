@@ -10,5 +10,6 @@ export const Container = styled.div`
 
 export const Content = styled.main`
   width: 1320px;
+  height: calc(100vh - 50px);
   padding: 0px 20px;
 `;
