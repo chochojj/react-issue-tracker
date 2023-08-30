@@ -19,8 +19,8 @@ const IssueList = () => {
         <ul>
           {issues.map((data, index) => (
             <Fragment key={data.number}>
-              {(index + 1) % 5 === 0 && index >= 4 && <Advertise />}
               <IssueItem issue={data} />
+              {(index + 1) % 4 === 0 && <Advertise />}
             </Fragment>
           ))}
         </ul>

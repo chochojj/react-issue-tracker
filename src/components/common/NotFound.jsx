@@ -5,7 +5,7 @@ const Notfound = () => {
   return (
     <Container>
       <Wrap>
-        <span>❗ NotFound ❗</span>
+        <span>❗ 404 NotFound ❗</span>
         <span>페이지를 찾을 수 없습니다</span>
         <span>주소를 확인해주세요</span>
       </Wrap>
