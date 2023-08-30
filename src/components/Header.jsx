@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 const Header = () => {
-  return <Head>헤더~</Head>;
+  return (
+    <Head>
+      <span> facebook / react</span>
+    </Head>
+  );
 };
 
 export default Header;
