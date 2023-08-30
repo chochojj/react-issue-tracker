@@ -7,7 +7,7 @@ const octokit = new Octokit({
   auth: process.env.REACT_APP_TOKEN,
 });
 
-export const getIssues = async () => {
+export const getIssues = async ({ dataNumber }) => {
   try {
     const response = await octokit.request("GET /repos/{owner}/{repo}/issues", {
       owner: `${owner}`,

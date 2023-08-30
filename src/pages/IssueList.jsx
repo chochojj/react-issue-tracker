@@ -7,7 +7,7 @@ import { useFetch } from "../hook/useFetch";
 import { Container, Content } from "../styles/style";
 
 const IssueList = () => {
-  const { data: issues, isLoading } = useFetch(getIssues);
+  const { data: issues, isLoading } = useFetch(getIssues, 1);
 
   if (isLoading) {
     return <Loading />;
