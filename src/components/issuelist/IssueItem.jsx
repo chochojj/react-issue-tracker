@@ -10,8 +10,9 @@ const IssueItem = ({ issue }) => {
       <IssueLink to={`/issues/${issue.number}`}>
         <div>
           <Title>
-            <span>#{issue.number}</span>
-            <span>{issue.title}</span>
+            <span>
+              #{issue.number} {issue.title}
+            </span>
           </Title>
           <Info>
             <span>작성자: {issue.user.login}</span>
@@ -34,7 +35,7 @@ const IssueLink = styled(Link)`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #9b9b9b;
+  border-bottom: 1px solid #dedede;
   padding: 10px 15px;
 
   & > div {

@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import Loading from "./common/Loading";
-import { Container } from "../styles/style";
-import { useObserver } from "../hook/useObserver";
-import { getIssues } from "../apis/api";
+import Loading from "../common/Loading";
+import { Container } from "../../styles/style";
+import { useObserver } from "../../hook/useObserver";
+import { getIssues } from "../../apis/api";
 
 const InfinityIssues = ({ page, addIssues }) => {
   const targetRef = useRef(null);

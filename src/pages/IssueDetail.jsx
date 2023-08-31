@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { getIssueDetail } from "../apis/api";
-import Profile from "../components/Profile";
-import IssueHeader from "../components/IssueHeader";
-import IssueBody from "../components/IssueBody";
+import Profile from "../components/issuedetail/Profile";
+import IssueHeader from "../components/issuedetail/IssueHeader";
+import IssueBody from "../components/issuedetail/IssueBody";
 import Loading from "../components/common/Loading";
 import { useFetch } from "../hook/useFetch";
 import styled from "styled-components";

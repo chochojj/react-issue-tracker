@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Fragment } from "react";
-import IssueItem from "../components/IssueItem";
+import IssueItem from "../components/issuelist/IssueItem";
 import Loading from "../components/common/Loading";
-import Advertise from "../components/Advertise";
-import InfiniteScroll from "../components/InfiniteScroll";
+import Advertise from "../components/issuelist/Advertise";
+import InfiniteScroll from "../components/issuelist/InfiniteScroll";
 import { Container, Content } from "../styles/style";
 import { getIssues } from "../apis/api";
 

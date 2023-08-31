@@ -20,5 +20,5 @@ const AD = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #9b9b9b;
+  border-bottom: 1px solid #dedede;
 `;
