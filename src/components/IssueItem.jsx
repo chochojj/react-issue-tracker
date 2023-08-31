@@ -34,7 +34,7 @@ const IssueLink = styled(Link)`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #393939;
+  border-bottom: 1px solid #9b9b9b;
   padding: 10px 15px;
 
   & > div {
