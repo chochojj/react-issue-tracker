@@ -7,7 +7,7 @@ const octokit = new Octokit({
   auth: process.env.REACT_APP_TOKEN,
 });
 
-export const getIssues = async ({ dataNumber }) => {
+export const getIssues = async (page) => {
   try {
     const response = await octokit.request("GET /repos/{owner}/{repo}/issues", {
       owner: `${owner}`,
@@ -16,6 +16,7 @@ export const getIssues = async ({ dataNumber }) => {
       sort: "comments",
       direction: "desc",
       per_page: 10,
+      page,
     });
 
     return response.data;

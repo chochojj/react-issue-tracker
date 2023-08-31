@@ -1,13 +1,32 @@
+import { useState, useEffect, useRef } from "react";
 import { Fragment } from "react";
-import { getIssues } from "../apis/api";
 import IssueItem from "../components/IssueItem";
 import Loading from "../components/common/Loading";
 import Advertise from "../components/Advertise";
-import { useFetch } from "../hook/useFetch";
+import InfiniteScroll from "../components/InfiniteScroll";
 import { Container, Content } from "../styles/style";
+import { getIssues } from "../apis/api";
 
 const IssueList = () => {
-  const { data: issues, isLoading } = useFetch(getIssues, 1);
+  const [issues, setIssues] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const page = useRef(1);
+
+  const addIssues = (newIssues) => {
+    setIssues((prevIssues) => [...prevIssues, ...newIssues]);
+  };
+
+  useEffect(() => {
+    getIssues(page.current)
+      .then((response) => {
+        setIssues(response);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
+  }, []);
 
   if (isLoading) {
     return <Loading />;
@@ -24,6 +43,7 @@ const IssueList = () => {
             </Fragment>
           ))}
         </ul>
+        <InfiniteScroll page={page} addIssues={addIssues} />
       </Content>
     </Container>
   );
