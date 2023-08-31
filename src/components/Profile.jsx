@@ -11,9 +11,8 @@ const Profile = ({ profile }) => {
 export default Profile;
 
 const ImgBox = styled.div`
-  width: fit-content;
-  display: flex;
-  justify-content: center;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
 

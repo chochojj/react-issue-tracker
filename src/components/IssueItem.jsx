@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { VscComment } from "react-icons/vsc";
 
 const IssueItem = ({ issue }) => {
   const formattedDate = issue.created_at.split("T")[0];
@@ -17,7 +18,9 @@ const IssueItem = ({ issue }) => {
             <span>작성일: {formattedDate}</span>
           </Info>
         </div>
-        <span>코멘트: {issue.comments}</span>
+        <span>
+          <VscComment /> <p>{issue.comments}</p>
+        </span>
       </IssueLink>
     </li>
   );
@@ -40,6 +43,11 @@ const IssueLink = styled(Link)`
   }
   & > span {
     font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  & > span > p {
+    margin-left: 3px;
   }
 `;
 

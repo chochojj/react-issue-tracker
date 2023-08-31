@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { VscComment } from "react-icons/vsc";
 
 const IssueHeader = ({ issue }) => {
   const formattedDate = issue.created_at.split("T")[0];
@@ -7,15 +8,18 @@ const IssueHeader = ({ issue }) => {
     <Header>
       <div>
         <Title>
-          <span>#{issue.number}</span>
-          <span>{issue.title}</span>
+          <span>
+            #{issue.number} {issue.title}
+          </span>
         </Title>
         <Info>
           <span>작성자: {issue.user.login}</span>
           <span>작성일: {formattedDate}</span>
         </Info>
       </div>
-      <span>코멘트: {issue.comments}</span>
+      <span>
+        <VscComment /> <p>{issue.comments}</p>
+      </span>
     </Header>
   );
 };
@@ -24,7 +28,7 @@ export default IssueHeader;
 
 const Header = styled.div`
   width: 100%;
-  height: 60px;
+  height: fit-content;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -38,8 +42,12 @@ const Header = styled.div`
     flex-direction: column;
   }
   & > span {
-    margin-left: 15px;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  & > span > p {
+    margin-left: 3px;
   }
 `;
 
@@ -47,10 +55,8 @@ const Title = styled.div`
   display: flex;
   margin-bottom: 4px;
   align-items: center;
-
-  & > span {
-    margin-right: 10px;
-  }
+  font-size: 18px;
+  font-weight: bold;
 `;
 
 const Info = styled.div`
