@@ -16,7 +16,7 @@ export function useFetch(apiFunction, ...args) {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [apiFunction, ...args]);
+  }, [apiFunction, args]);
 
   return { data, isLoading, isError };
 }
