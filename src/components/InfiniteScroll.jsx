@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import Loading from "./common/Loading";
+import { Container } from "../styles/style";
 import { useObserver } from "../hook/useObserver";
 import { getIssues } from "../apis/api";
 
@@ -30,7 +31,11 @@ const InfinityIssues = ({ page, addIssues }) => {
 
 export default InfinityIssues;
 
-const Observer = styled.div`
+const Observer = styled(Container)`
   width: 100%;
-  height: 30px;
+  margin-top: 30px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
