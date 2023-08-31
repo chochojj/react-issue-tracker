@@ -27,15 +27,14 @@ const IssueHeader = ({ issue }) => {
 export default IssueHeader;
 
 const Header = styled.div`
-  width: 100%;
+  width: calc(100% - 70px);
   height: fit-content;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid grey;
-  padding: 10px 15px;
-  margin-left: 15px;
+  padding: 7px 12px;
 
   & > div {
     display: flex;

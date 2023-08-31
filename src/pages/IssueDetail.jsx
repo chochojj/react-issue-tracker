@@ -35,6 +35,6 @@ const Title = styled.div`
   margin-top: 20px;
   height: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
