@@ -10,7 +10,7 @@ github API를 이용한 간단한 이슈트래킹 페이지입니다
 
 - 무한스크롤 <br/>
 1. IntersactionObserver API
-  useObserver을 만들어 intersactionObserver API을 재사용할 수 있게 구현하였으며 <br/>
+  useObserver을 만들어 intersactionObserver API을 재사용할 수 있게 구현하였으며 
   관찰 대상과 해당 대상이 화면에 관찰되었을 때 실행할 콜백 함수를 인자로 받고있습니다
  ```
  export const useObserver = (targetRef, callback) => {
@@ -26,8 +26,8 @@ github API를 이용한 간단한 이슈트래킹 페이지입니다
  
  ```
 2. 관찰 대상과 콜백 함수
-    InfinityIssues 컴포넌트에 useRef를 사용하여 참조하고 해당 컴포넌트가 관찰되면 로딩 인디케이터를 노출시키며  <br/>
-    콜백 함수가 실행되어 패치해온 데이터를 추가해줍니다
+    InfinityIssues 컴포넌트에 useRef를 사용하여 참조하고 해당 컴포넌트가 
+    관찰되면 로딩 인디케이터를 노출시키며 콜백 함수가 실행되어 패치해온 데이터를 추가해줍니다
  ```
  const InfinityIssues = ({ page, addIssues }) => {
    const targetRef = useRef(null);
